@@ -24,7 +24,7 @@ const Navbar = () => {
 				>
 					<img src={logo} alt="logo" className="object-contain w-9 h-9" />
 					<p className="text-white text-[18px] font-bold cursor-pointer">
-						Zultan | <span className="hidden sm:block">Software Engineer</span>
+						Zultan<span className="hidden sm:block">| Software Engineer</span>
 					</p>
 				</Link>
 				<ul className="flex-row hidden gap-10 list-none sm:flex">
@@ -42,11 +42,33 @@ const Navbar = () => {
 				</ul>
 				<div className="flex items-center justify-end flex-1 sm:hidden">
 					<img
-						src={menu}
+						src={toggle ? close : menu}
 						alt="menu"
 						className="w-[28px] h-[28px] object-contain cursor-pointer"
 						onClick={() => setToggle(!toggle)}
 					/>
+					<div
+						className={`${
+							!toggle ? "hidden" : "flex"
+						} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+					>
+						<ul className="flex flex-col items-start justify-end gap-4 list-none">
+							{navLinks.map((link) => (
+								<li
+									key={link.id}
+									className={`${
+										active === link.title ? "text-white" : "text-secondary"
+									} font-poppins text-[16px] font-medium cursor-pointer`}
+									onClick={() => {
+										setToggle(!toggle);
+										setActive(link.title);
+									}}
+								>
+									<a href={`#${link.id}`}>{link.title}</a>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</nav>
