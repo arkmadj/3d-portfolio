@@ -4,7 +4,7 @@
 import { styles } from "../styles";
 
 // import { styles } from "../styles";
-import { ComputerCanvas } from "./canvas";
+import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
 	return (
@@ -28,7 +28,7 @@ const Hero = () => {
 					</p>
 				</div>
 			</div>
-			<ComputerCanvas />
+			<ComputersCanvas />
 		</section>
 	);
 };
