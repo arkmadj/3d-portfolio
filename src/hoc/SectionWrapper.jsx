@@ -6,10 +6,19 @@ import { staggerContainer } from "../utils/motion";
 const SectionWrapper = (Component, idName) =>
 	function HOC() {
 		return (
-      <motion.section>
-        <Component/>
-      </motion.section>
-    )
+			<motion.section
+				variants={staggerContainer()}
+				initial="hidden"
+				whileInView="show"
+				viewport={{ once: true, amount: 0.25 }}
+				className={`${styles.padding} mx-auto relative z-0 max-w-7xl`}
+			>
+				<span className="hash-span" id={idName}>
+					&nbps;
+				</span>
+				<Component />
+			</motion.section>
+		);
 	};
 
 export default SectionWrapper;
