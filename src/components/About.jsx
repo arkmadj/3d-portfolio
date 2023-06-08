@@ -27,6 +27,11 @@ const About = () => {
 				ReactJS, NodeJS, ExpressJS, Flask, Django, AWS, Azure, GCP, Git, Agile,
 				Scrum.
 			</motion.p>
+      <div className="flex flex-wrap gap-10 mt-20">
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index}/>
+        ))}
+      </div>
 		</>
 	);
 };
