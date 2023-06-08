@@ -5,6 +5,8 @@ import { styles } from "../styles";
 import { services } from "../contants";
 import { fadeIn, textVariant } from "../utils/motion";
 
+
+
 const About = () => {
 	return (
 		<>
