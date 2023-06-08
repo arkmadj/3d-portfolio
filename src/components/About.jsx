@@ -5,7 +5,15 @@ import { styles } from "../styles";
 import { services } from "../contants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-
+const ServiceCard = ({ index, title, icon }) => {
+	return (
+		<Tilt className="xs:w-[250px] w-full">
+			<motion.div
+				variants={fadeIn("right", "spring", 0.5 * index, 0.5)}
+			></motion.div>
+		</Tilt>
+	);
+};
 
 const About = () => {
 	return (
@@ -29,11 +37,11 @@ const About = () => {
 				ReactJS, NodeJS, ExpressJS, Flask, Django, AWS, Azure, GCP, Git, Agile,
 				Scrum.
 			</motion.p>
-      <div className="flex flex-wrap gap-10 mt-20">
-        {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service}/>
-        ))}
-      </div>
+			<div className="flex flex-wrap gap-10 mt-20">
+				{services.map((service, index) => (
+					<ServiceCard key={service.title} index={index} {...service} />
+				))}
+			</div>
 		</>
 	);
 };
