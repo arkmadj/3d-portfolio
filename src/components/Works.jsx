@@ -11,8 +11,8 @@ const Works = () => {
 	return (
 		<>
 			<motion.div variants={textVariant()}>
-				<p className={styles.sectionSubText}>What I have done so far</p>
-				<h2 className={styles.sectionHeadText}>Work Exprience</h2>
+				<p className={styles.sectionSubText}>My work</p>
+				<h2 className={styles.sectionHeadText}>Projects.</h2>
 			</motion.div>
 		</>
 	);
