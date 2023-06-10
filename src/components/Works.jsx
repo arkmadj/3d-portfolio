@@ -26,6 +26,11 @@ const Works = () => {
 					and manage projects effectively.
 				</motion.p>
 			</div>
+			<div className="flex flex-wrap mt-20 gap-7">
+				{projects.map((project, index) => (
+					<ProjectCard kry={`project-${index}`} {...project} index={index} />
+				))}
+			</div>
 		</>
 	);
 };
