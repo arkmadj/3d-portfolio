@@ -8,12 +8,18 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
 const Contact = () => {
+  const formRef = useRef()
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
 		messgae: "",
 	});
-  
+  const [loading, setLoading] = useState(false)
+
+  const handleChange = (e) => {}
+
+  const handleSubmit = (e) => {}
+
 	return <div>Contact</div>;
 };
 
