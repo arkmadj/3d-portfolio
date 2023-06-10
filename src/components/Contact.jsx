@@ -67,6 +67,12 @@ const Contact = () => {
 							className="px-6 py-4 font-medium text-white border-none rounded-lg outline-none bg-tertiary placeholder:text-secondary focus:outline-none"
 						/>
 					</label>
+					<button
+						type="submit"
+						className="px-8 py-3 font-bold text-white shadow-md outline-none bg-tertiary w-fit shadow-primary rounded-xl"
+					>
+						{loading ? "Sending..." : "Send"}
+					</button>
 				</form>
 			</motion.div>
 		</div>
