@@ -14,6 +14,15 @@ const Works = () => {
 				<p className={styles.sectionSubText}>My work</p>
 				<h2 className={styles.sectionHeadText}>Projects.</h2>
 			</motion.div>
+			<div className="flex w-full">
+				<motion.p>
+					Following projects showcases my skills and experience through
+					real-world examples of my work. Each project is briefly described with
+					links to code repositories and live demos in it. It reflects my
+					ability to solve complex problems, work with different technologies,
+					and manage projects effectively.
+				</motion.p>
+			</div>
 		</>
 	);
 };
