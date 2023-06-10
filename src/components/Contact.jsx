@@ -7,16 +7,12 @@ import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
-// template_6fw72jv
-// service_bhusflj
-// 6IcUp2OBRA9bKSfQD
-
 const Contact = () => {
 	const formRef = useRef();
 	const [form, setForm] = useState({
 		name: "",
 		email: "",
-		messgae: "",
+		message: "",
 	});
 	const [loading, setLoading] = useState(false);
 
@@ -26,7 +22,40 @@ const Contact = () => {
 		setForm({ ...form, [name]: value });
 	};
 
-	const handleSubmit = (e) => {};
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setLoading(true);
+
+		emailjs
+			.send(
+				"service_bhusflj",
+				"template_6fw72jv",
+				{
+					from_name: form.name,
+					to_name: "Adrian",
+					from_email: form.email,
+					to_email: "ahmadjinadu@gmail.com",
+					message: form.messgae,
+				},
+				"6IcUp2OBRA9bKSfQD"
+			)
+			.then(() => {
+				setLoading(false);
+				alert("Thank you. I will get back to you as soon as possible.");
+				setForm(
+					{
+						name: "",
+						email: "",
+						message: "",
+					},
+					(error) => {
+						setLoading(false);
+						console.log(error);
+						alert("Something went wrong.");
+					}
+				);
+			});
+	};
 
 	return (
 		<div className="flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row">
@@ -69,7 +98,7 @@ const Contact = () => {
 						<textarea
 							rows="7"
 							name="message"
-							value={form.messgae}
+							value={form.message}
 							onChange={handleChange}
 							placeholder="What do you want to say?"
 							className="px-6 py-4 font-medium text-white border-none rounded-lg outline-none bg-tertiary placeholder:text-secondary focus:outline-none"
